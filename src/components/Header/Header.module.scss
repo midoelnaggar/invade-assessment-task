@@ -1,8 +1,44 @@
-.Header{
-    display: sticky;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: red;
-    padding: 1rem 2rem;
+.Header {
+  display: sticky;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background-color: var(--primary-color);
+
+  .start,
+  .end {
+    width: 50%;
+  }
+
+  .start {
+    padding: 16px 160px;
+    .logoContainer {
+      padding: 16px;
+      background-color: white;
+      width: fit-content;
+      img {
+        height: 32px;
+      }
+    }
+  }
+  .end {
+    display: flex;
+    justify-content: flex-end;
+    overflow: hidden;
+    transition: width 0.2s;
+    .searchContainer {
+      display: grid;
+      padding: 16px 160px;
+      width: 100%;
+      align-items: center;
+      input {
+        justify-self: flex-end;
+        padding-inline: 10px;
+        width: 50%;
+        height: 40px;
+      }
+    }
+  }
 }

@@ -10,4 +10,5 @@ interface IUniversity {
 interface IUniversitiesState {
     loading: boolean;
     universities: IUniversity[]
+    filteredUniversities: IUniversity[]
 }
