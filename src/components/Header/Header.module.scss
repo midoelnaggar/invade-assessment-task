@@ -1,19 +1,20 @@
 .Header {
-  display: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   display: flex;
   justify-content: space-between;
   width: 100%;
   background-color: var(--primary-color);
-
+  padding-inline: 20%;
+  z-index: 1;
   .start,
   .end {
     width: 50%;
   }
 
   .start {
-    padding: 16px 160px;
+    padding-block: 16px;
     .logoContainer {
       padding: 16px;
       background-color: white;
@@ -27,10 +28,11 @@
     display: flex;
     justify-content: flex-end;
     overflow: hidden;
-    transition: width 0.2s;
+    width: 50%;
+    transition: all 0.2s;
     .searchContainer {
       display: grid;
-      padding: 16px 160px;
+      padding-block: 16px;
       width: 100%;
       align-items: center;
       input {
@@ -38,6 +40,50 @@
         padding-inline: 10px;
         width: 50%;
         height: 40px;
+        border-radius: 8px;
+        border: none;
+        &:focus {
+          outline: 1px solid var(--secondary-color);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .Header {
+    padding-inline: 10%;
+  }
+}
+
+@media (max-width: 992px) {
+  .Header {
+    padding-inline: 5%;
+    .end {
+      .searchContainer {
+        input {
+          width: 75%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .Header {
+    padding-inline: 5%;
+    flex-direction: column;
+    .start,
+    .end {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .searchContainer {
+        padding-top: 0;
+        input {
+          justify-self:center;
+        }
       }
     }
   }

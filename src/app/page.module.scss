@@ -1,9 +1,44 @@
 .main {
-    padding-block: 32px;
+  margin-inline: 20%;
+  padding-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  .sortContainer {
+    width: fit-content;
+    align-self: flex-end;
+    background:none;
+    border: none;
+    cursor: pointer;
+  }
   .list {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
+    align-items: stretch;
     gap: 16px;
+
+  }
+}
+
+
+@media (max-width: 1200px) {
+  .main {
+    margin-inline: 10%;
+  }
+}
+
+@media (max-width: 992px) {
+  .main {
+    margin-inline: 5%;
+ 
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    margin-inline: 5%;
+  }
+  .list {
+    flex-direction: column;
   }
 }

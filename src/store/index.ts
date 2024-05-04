@@ -20,7 +20,7 @@ const store = configureStore({
     },
 });
 
-export const { searchUniversities } = universitiesSlice.actions;
+export const { searchUniversities, deleteUniversity } = universitiesSlice.actions;
 
 export type AppState = ReturnType<typeof persistedReducer>;
 export type AppDispatch = typeof store.dispatch;

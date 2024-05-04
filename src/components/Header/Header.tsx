@@ -30,9 +30,16 @@ const Header = () => {
           <img src="/assets/logo.png" alt="logo" />
         </div>
       </div>
-      <div className={styles.end} style={params?.index ? { width: 0 } : {}}>
+      <div
+        className={styles.end}
+        style={params?.index ? { width: 0 } : {}}
+      >
         <div className={styles.searchContainer}>
-          <input placeholder="Search Universities" value={searchText} onChange={handleSearchInputChange} />
+          <input
+            placeholder="Search Universities"
+            value={searchText}
+            onChange={handleSearchInputChange}
+          />
         </div>
       </div>
     </div>

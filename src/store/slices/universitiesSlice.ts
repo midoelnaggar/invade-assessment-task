@@ -11,12 +11,17 @@ const universitiesSlice = createSlice({
     name: "universities",
     initialState,
     reducers: {
-        searchUniversities(state, action: { payload: string }) {
-            if (action.payload.length > 2) {
-                state.filteredUniversities = state.universities.filter(university => university.name.toLowerCase().includes(action.payload?.toLowerCase()));
+        searchUniversities(state, { payload }: { payload: string }) {
+            if (payload.length > 2) {
+                state.filteredUniversities = state.universities.filter(university => university.name.toLowerCase().includes(payload?.toLowerCase()));
+                window.scrollTo({ top: 0, behavior: "smooth" })
+
             } else {
                 state.filteredUniversities = state.universities;
             }
+        },
+        deleteUniversity(state, { payload }: { payload: number }) {
+            state.filteredUniversities = state.filteredUniversities.filter((_, index) => index != payload)
         }
     },
     extraReducers(builder) {
